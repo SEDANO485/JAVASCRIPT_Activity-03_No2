@@ -1,0 +1,2 @@
+# JAVASCRIPT_Activity-03_No2
+JAVASCRIPT_Exercise03_number2
