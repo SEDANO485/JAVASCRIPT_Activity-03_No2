@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>Java Script Day03</title>
+</head>
+<body>
+  <h2>JavaScript Day03 Activity No.2</h2>
+  	<input type="number" id="numberInput" placeholder="Enter number" />
+  <button onclick="printPattern()">Execute</button>
+  <pre id="patternOutput"></pre>
+
+  <script>
+    function printPattern() {
+      var numPatterns = parseInt(document.getElementById("numberInput").value);
+      var output = document.getElementById("patternOutput");
+
+      if (isNaN(numPatterns) || numPatterns < 0) {
+        output.innerText = "Error. Please enter a non-negative number.";
+        return;
+      }
+
+      var i = numPatterns;
+      var pattern = "";
+
+      while (i > 0) {
+        var spaces = "";
+        var stars = "";
+        var s = numPatterns - i;
+        var j = i;
+
+        // Add leading spaces
+        while (s > 0) {
+          spaces += " ";
+          s--;
+        }
+
+        // Add stars
+        while (j > 0) {
+          stars += "*";
+          j--;
+        }
+
+        pattern += spaces + stars + "\n";
+        i--;
+      }
+
+      output.innerText = pattern;
+    }
+  </script>
+</body>
+</html>
